@@ -66,6 +66,6 @@ console.log(cl);
 const addHundred = (a) => a+100;
 console.log(addHundred(90));
 
-const mag = prompt()
-
-
+let str = " HEllO WORLD "
+console.log(str.trim());
+console.log(str.includes("WORLD"));
