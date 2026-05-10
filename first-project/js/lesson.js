@@ -44,28 +44,58 @@
 // }
 
 
-function add (a,b) {
-    return a + b;
-}
-console.log(add(3,4));
-console.log(add);
+// function add (a,b) {
+//     return a + b;
+// }
+// console.log(add(3,4));
+// console.log(add);
 
 
-const sampleFunc = function () {
-    console.log("無名関数");
-}
+// const sampleFunc = function () {
+//     console.log("無名関数");
+// }
 
-sampleFunc();
+// sampleFunc();
 
-const cl= (a) => {
-    console.log(a);
-}
+// const cl= (a) => {
+//     console.log(a);
+// }
 
-console.log(cl);
+// console.log(cl);
 
-const addHundred = (a) => a+100;
-console.log(addHundred(90));
+// const addHundred = (a) => a+100;
+// console.log(addHundred(90));
 
-let str = " HEllO WORLD "
-console.log(str.trim());
-console.log(str.includes("WORLD"));
+// let str = " HEllO WORLD "
+// console.log(str.trim());
+// console.log(str.includes("WORLD"));
+
+// let number = 234233256356.7535734573294572
+// console.log(Math.round(number));
+// console.log(Math.random());
+
+// let today = new Date();
+// console.log(today.getFullYear());
+
+
+// let numbers = [2,4,5,7,5,5]
+
+// // numbers.forEach((n,i) => {
+// //     console.log(i,n);
+// // });
+
+// // let array = numbers.map(x => x*3);
+// // console.log(array);
+
+// let even = numbers.filter(x => x % 2 ===0);
+// console.log(even);
+
+// let user = {
+//     name : "shima",
+//     age : 23,
+//     isAdmin:true
+// }
+
+// console.log(typeof user.isAdmin);
+
+
