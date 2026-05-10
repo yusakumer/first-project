@@ -98,4 +98,25 @@
 
 // console.log(typeof user.isAdmin);
 
+// document.addEventListener("DOMContentLoaded",() => {
+//     const newParegraph = document.createElement("p")
+//     newParegraph.textContent = "追加しました";
+//     newParegraph.setAttribute("class","highlight");
+//     newParegraph.style.color = "red";
 
+//     const myDiv = document.getElementById("mydiv")
+//     myDiv.appendChild(newParegraph)
+// });
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     // const divElem = document.getElementById("test-id");
+//     // const paragraph = document.querySelectorAll(".test-class");
+
+//     // paragraph.forEach((n) => {
+//     //     divElem.removeChild(n);
+//     // })
+
+//     const paragraph = document.querySelector(".test-class.paragraph");
+//     paragraph.remove();
+// });
