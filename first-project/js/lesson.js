@@ -1,143 +1,47 @@
-// const ojb = [{
-//   name: "shima",
-//   age: 23,
-// }];
-// console.log(ojb.name);
-// const age = "80";
-// const is = age >= 18 ? "成人" : "bubui";
-// console.log(is);
-
-// intNum = parseInt(age);
-// console.log(intNum);
+let todoList = [];
 
 
-// let num1 = 10;
-// let num2 = 5;
+document.addEventListener("DOMContentLoaded",() => {
+    const registerButtonElem = document.getElementById("register");
+    registerButtonElem.addEventListener("click", () =>{
+        // TODOの値を取得する
+        const newTodo = document.getElementById("new-todo-name");
+        const newPerson = document.getElementById("new-person");
+        const newDeadline = document.getElementById("deadline");
 
-// let isEqual = num1 === num2
-// console.log(isEqual);
+        console.log(newTodo.value);
+        console.log(newPerson.value);
+        console.log(newDeadline.value);
 
-// let day = "月";
+        const newTodoObject = {
+            todoName:newTodo.value,
+            person:newPerson.value,
+            deadline:newDeadline.value
+        };
+        
+        todoList.push(newTodoObject);
 
-// switch (day) {
-//     case "月":
-//         console.log(day);
-//         break;
-//     case "火":
-//         console.log("火曜日");
-//         break;
-//     default:
-//         console.log("終わり");
-// }
+        console.log(todoList);
 
+        todoList.forEach((todo) => {
+            const trElem = document.createElement("tr");
 
-// const fruits = ["りんご","みかん","キウイ"]
-// for (const fruit of fruits){
-//     console.log(fruit);
-// }
+            const todoNameTdElem = document.createElement("td");
+            todoNameTdElem.textContent = todo.todoName
 
+            const personTdElem = document.createElement("td");
+            personTdElem.textContent = todo.person
 
-// console.log(ojb.name)
+            const deadlineTdElem = document.createElement("td");
+            deadlineTdElem.textContent = todo.deadline
 
-// for (let person of ojb) {
-//     console.log(person.name);
-// }
+            trElem.appendChild(todoNameTdElem);
+            trElem.appendChild(personTdElem);
+            trElem.appendChild(deadlineTdElem);
 
+            const tbody = document.getElementById("todo-data");
+            tbody.appendChild(trElem);
 
-// function add (a,b) {
-//     return a + b;
-// }
-// console.log(add(3,4));
-// console.log(add);
-
-
-// const sampleFunc = function () {
-//     console.log("無名関数");
-// }
-
-// sampleFunc();
-
-// const cl= (a) => {
-//     console.log(a);
-// }
-
-// console.log(cl);
-
-// const addHundred = (a) => a+100;
-// console.log(addHundred(90));
-
-// let str = " HEllO WORLD "
-// console.log(str.trim());
-// console.log(str.includes("WORLD"));
-
-// let number = 234233256356.7535734573294572
-// console.log(Math.round(number));
-// console.log(Math.random());
-
-// let today = new Date();
-// console.log(today.getFullYear());
-
-
-// let numbers = [2,4,5,7,5,5]
-
-// // numbers.forEach((n,i) => {
-// //     console.log(i,n);
-// // });
-
-// // let array = numbers.map(x => x*3);
-// // console.log(array);
-
-// let even = numbers.filter(x => x % 2 ===0);
-// console.log(even);
-
-// let user = {
-//     name : "shima",
-//     age : 23,
-//     isAdmin:true
-// }
-
-// console.log(typeof user.isAdmin);
-
-// document.addEventListener("DOMContentLoaded",() => {
-//     const newParegraph = document.createElement("p")
-//     newParegraph.textContent = "追加しました";
-//     newParegraph.setAttribute("class","highlight");
-//     newParegraph.style.color = "red";
-
-//     const myDiv = document.getElementById("mydiv")
-//     myDiv.appendChild(newParegraph)
-// });
-
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     // const divElem = document.getElementById("test-id");
-//     // const paragraph = document.querySelectorAll(".test-class");
-
-//     // paragraph.forEach((n) => {
-//     //     divElem.removeChild(n);
-//     // })
-
-//     const paragraph = document.querySelector(".test-class.paragraph");
-//     paragraph.remove();
-// });
-
-document.addEventListener("DOMContentLoaded", () => {
-    const button = document.getElementById("my-button");
-    button.addEventListener("mouseover", () => alert("osimasita"))
-
-
-
-    const div = document.getElementById("div")
-    document.addEventListener("mouseenter",() => {
-        div.textContent = "マウスを動かしています"
-    })
-
-    document.addEventListener("mouseleave", () => {
-        div.textContent = '離れました'
-    })
-
-    const keyboard = document.getElementById("keydown")
-    keyboard.addEventListener("keydown",(event) => {
-        console.log("keyが離れました",event.key);
-    })
+        })
+    });
 });
