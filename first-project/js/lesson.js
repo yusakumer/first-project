@@ -98,4 +98,46 @@
 
 // console.log(typeof user.isAdmin);
 
+// document.addEventListener("DOMContentLoaded",() => {
+//     const newParegraph = document.createElement("p")
+//     newParegraph.textContent = "追加しました";
+//     newParegraph.setAttribute("class","highlight");
+//     newParegraph.style.color = "red";
 
+//     const myDiv = document.getElementById("mydiv")
+//     myDiv.appendChild(newParegraph)
+// });
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+//     // const divElem = document.getElementById("test-id");
+//     // const paragraph = document.querySelectorAll(".test-class");
+
+//     // paragraph.forEach((n) => {
+//     //     divElem.removeChild(n);
+//     // })
+
+//     const paragraph = document.querySelector(".test-class.paragraph");
+//     paragraph.remove();
+// });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("my-button");
+    button.addEventListener("mouseover", () => alert("osimasita"))
+
+
+
+    const div = document.getElementById("div")
+    document.addEventListener("mouseenter",() => {
+        div.textContent = "マウスを動かしています"
+    })
+
+    document.addEventListener("mouseleave", () => {
+        div.textContent = '離れました'
+    })
+
+    const keyboard = document.getElementById("keydown")
+    keyboard.addEventListener("keydown",(event) => {
+        console.log("keyが離れました",event.key);
+    })
+});
