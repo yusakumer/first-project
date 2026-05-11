@@ -25,10 +25,10 @@ const removeTodoElem = () => {
 };
 
 // TODO一覧を表示する関数
-const TodoListDisplay = () => {
+const TodoListDisplay = (todoList) => {
   todoList.forEach((todo) => {
     const tbody = document.getElementById("todo-data");
-    
+
     const trElem = document.createElement("tr");
 
     const todoNameTdElem = document.createElement("td");
@@ -48,7 +48,6 @@ const TodoListDisplay = () => {
   });
 };
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const registerButtonElem = document.getElementById("register");
   registerButtonElem.addEventListener("click", () => {
@@ -58,11 +57,19 @@ document.addEventListener("DOMContentLoaded", () => {
     //todo一覧を削除
     removeTodoElem();
     // todo一覧を表示
-    TodoListDisplay();
+    TodoListDisplay(todoList);
+  });
+
+  const filterInputElem = document.getElementById("filter");
+  filterInputElem.addEventListener("input", () => {
+    const filterWord = filterInputElem.value;
+    const filteredTodoList = todoList.filter(
+      (todo) =>
+        todo.todoName.includes(filterWord) || todo.person.includes(filterWord),
+    );
+
+    removeTodoElem();
+    TodoListDisplay(filteredTodoList);
+
   });
 });
-
-
-
-
-
