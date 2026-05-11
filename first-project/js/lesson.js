@@ -1,143 +1,68 @@
-// const ojb = [{
-//   name: "shima",
-//   age: 23,
-// }];
-// console.log(ojb.name);
-// const age = "80";
-// const is = age >= 18 ? "成人" : "bubui";
-// console.log(is);
+let todoList = [];
 
-// intNum = parseInt(age);
-// console.log(intNum);
+// 入力された新しいTODOの値を取得し、todoList変数に代入する関数
+const registerNewTodo = () => {
+  // TODOの値を取得する
+  const newTodo = document.getElementById("new-todo-name");
+  const newPerson = document.getElementById("new-person");
+  const newDeadline = document.getElementById("deadline");
 
+  // 入力された値を配列に追加
+  todoList.push({
+    todoName: newTodo.value,
+    person: newPerson.value,
+    deadline: newDeadline.value,
+  });
+};
 
-// let num1 = 10;
-// let num2 = 5;
+// TODO一覧を全て削除する関数
+const removeTodoElem = () => {
+  const tbody = document.getElementById("todo-data");
 
-// let isEqual = num1 === num2
-// console.log(isEqual);
+  while (tbody.firstChild) {
+    tbody.firstChild.remove();
+  }
+};
 
-// let day = "月";
+// TODO一覧を表示する関数
+const TodoListDisplay = () => {
+  todoList.forEach((todo) => {
+    const tbody = document.getElementById("todo-data");
+    
+    const trElem = document.createElement("tr");
 
-// switch (day) {
-//     case "月":
-//         console.log(day);
-//         break;
-//     case "火":
-//         console.log("火曜日");
-//         break;
-//     default:
-//         console.log("終わり");
-// }
+    const todoNameTdElem = document.createElement("td");
+    todoNameTdElem.textContent = todo.todoName;
 
+    const personTdElem = document.createElement("td");
+    personTdElem.textContent = todo.person;
 
-// const fruits = ["りんご","みかん","キウイ"]
-// for (const fruit of fruits){
-//     console.log(fruit);
-// }
+    const deadlineTdElem = document.createElement("td");
+    deadlineTdElem.textContent = todo.deadline;
 
+    trElem.appendChild(todoNameTdElem);
+    trElem.appendChild(personTdElem);
+    trElem.appendChild(deadlineTdElem);
 
-// console.log(ojb.name)
+    tbody.appendChild(trElem);
+  });
+};
 
-// for (let person of ojb) {
-//     console.log(person.name);
-// }
-
-
-// function add (a,b) {
-//     return a + b;
-// }
-// console.log(add(3,4));
-// console.log(add);
-
-
-// const sampleFunc = function () {
-//     console.log("無名関数");
-// }
-
-// sampleFunc();
-
-// const cl= (a) => {
-//     console.log(a);
-// }
-
-// console.log(cl);
-
-// const addHundred = (a) => a+100;
-// console.log(addHundred(90));
-
-// let str = " HEllO WORLD "
-// console.log(str.trim());
-// console.log(str.includes("WORLD"));
-
-// let number = 234233256356.7535734573294572
-// console.log(Math.round(number));
-// console.log(Math.random());
-
-// let today = new Date();
-// console.log(today.getFullYear());
-
-
-// let numbers = [2,4,5,7,5,5]
-
-// // numbers.forEach((n,i) => {
-// //     console.log(i,n);
-// // });
-
-// // let array = numbers.map(x => x*3);
-// // console.log(array);
-
-// let even = numbers.filter(x => x % 2 ===0);
-// console.log(even);
-
-// let user = {
-//     name : "shima",
-//     age : 23,
-//     isAdmin:true
-// }
-
-// console.log(typeof user.isAdmin);
-
-// document.addEventListener("DOMContentLoaded",() => {
-//     const newParegraph = document.createElement("p")
-//     newParegraph.textContent = "追加しました";
-//     newParegraph.setAttribute("class","highlight");
-//     newParegraph.style.color = "red";
-
-//     const myDiv = document.getElementById("mydiv")
-//     myDiv.appendChild(newParegraph)
-// });
-
-
-// document.addEventListener("DOMContentLoaded", () => {
-//     // const divElem = document.getElementById("test-id");
-//     // const paragraph = document.querySelectorAll(".test-class");
-
-//     // paragraph.forEach((n) => {
-//     //     divElem.removeChild(n);
-//     // })
-
-//     const paragraph = document.querySelector(".test-class.paragraph");
-//     paragraph.remove();
-// });
 
 document.addEventListener("DOMContentLoaded", () => {
-    const button = document.getElementById("my-button");
-    button.addEventListener("mouseover", () => alert("osimasita"))
+  const registerButtonElem = document.getElementById("register");
+  registerButtonElem.addEventListener("click", () => {
+    // TODOの値を取得する
+    registerNewTodo();
 
-
-
-    const div = document.getElementById("div")
-    document.addEventListener("mouseenter",() => {
-        div.textContent = "マウスを動かしています"
-    })
-
-    document.addEventListener("mouseleave", () => {
-        div.textContent = '離れました'
-    })
-
-    const keyboard = document.getElementById("keydown")
-    keyboard.addEventListener("keydown",(event) => {
-        console.log("keyが離れました",event.key);
-    })
+    //todo一覧を削除
+    removeTodoElem();
+    // todo一覧を表示
+    TodoListDisplay();
+  });
 });
+
+
+
+
+
