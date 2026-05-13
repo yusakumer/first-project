@@ -2,11 +2,15 @@
   "name": "todo",
   "version": "1.0.0",
   "description": "TODOアプリ",
-  "main": "js/lesson.js",
+  "main": "src/js/lesson.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint",
-    "lint:fix": "eslint js --fix"
+    "lint:fix": "eslint src/js --fix",
+    "format": "prettier .--check",
+    "build": "webpack --mode production",
+    "build:dev": "webpack",
+    "dev": "webpack serve --mode development"
   },
   "repository": {
     "type": "git",
@@ -19,7 +23,21 @@
   },
   "homepage": "https://github.com/yusakumer/first-project#readme",
   "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "eslint": "^10.3.0"
+    "@babel/core": "7.29.0",
+    "@babel/preset-env": "7.29.5",
+    "@eslint/js": "10.0.1",
+    "babel-loader": "10.1.1",
+    "css-loader": "7.1.4",
+    "eslint": "10.3.0",
+    "html-webpack-plugin": "5.6.7",
+    "mini-css-extract-plugin": "2.10.2",
+    "prettier": "3.8.3",
+    "style-loader": "4.0.0",
+    "webpack": "5.106.2",
+    "webpack-cli": "7.0.2",
+    "webpack-dev-server": "5.2.4"
+  },
+  "dependencies": {
+    "globals": "17.6.0"
   }
 }

@@ -2,16 +2,16 @@
   display: flex;
 }
 
-.new-todo > div{
+.new-todo > div {
   margin-left: 20px;
 }
 
 .todo-list {
-  border-collapse:collapse ;
+  border-collapse: collapse;
 }
 
 .todo-list > thead {
-  background-color :#bc1111;;
+  background-color: #bc1111;
 }
 
 .todo-list > thead > tr > th,
@@ -21,5 +21,5 @@
 }
 
 .filter {
-  margin: 10px ;
+  margin: 10px;
 }
