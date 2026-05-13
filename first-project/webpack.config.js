@@ -1,3 +1,6 @@
+const HtmlWebPackPlugon = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 module.exports = {
     entry: "./src/js/lesson.js",
     output: {
@@ -6,4 +9,21 @@ module.exports = {
     },
     mode: "development",
     devtool: "source-map",
+    devServer: {
+        static: `${__dirname}/dist`,
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [MiniCssExtractPlugin.loader, "css-loader"],
+            }
+        ]
+    },
+    plugins: [
+        new HtmlWebPackPlugon({
+            template: "./src/index.html",
+        }),
+        new MiniCssExtractPlugin(),
+    ],
 };

@@ -1,5 +1,5 @@
 import {todoList,registerNewTodo, removeTodoElem, TodoListDisplay} from "./todo.js";
-
+import "../css/style.css";
 
 
 
