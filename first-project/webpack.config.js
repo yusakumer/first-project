@@ -17,8 +17,21 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [MiniCssExtractPlugin.loader, "css-loader"],
-            }
-        ]
+            },
+            {
+                test: /\.js$/,
+                use:[
+                    {
+                        loader: "babel-loader",
+                        options: {
+                            presets: [
+                                "@babel/preset-env",
+                            ]
+                        }
+                    }
+                ]
+            },
+        ],
     },
     plugins: [
         new HtmlWebPackPlugon({
@@ -26,4 +39,5 @@ module.exports = {
         }),
         new MiniCssExtractPlugin(),
     ],
+    target: ["web","es5"],
 };
