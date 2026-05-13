@@ -1,0 +1,23 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "TODOアプリ",
+  "main": "js/lesson.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/yusakumer/first-project.git"
+  },
+  "author": "shima",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yusakumer/first-project/issues"
+  },
+  "homepage": "https://github.com/yusakumer/first-project#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.3.0"
+  }
+}
